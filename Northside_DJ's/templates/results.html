@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>results</title>
+</head>
+<body>
+    <h1>Albums for {{ artist }}</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Album Name</th>
+          <th>Release Year</th>
+          <th>Description</th>
+          <th>
+                 <input type="hidden" name="artist" value="{{artist}}">
+            </form>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for album in albums %}
+        <tr>
+          <td>{{ album.strAlbum }}</td>
+          <td>{{ album.intYearReleased }}</td>
+          <td>{{ album.strDescriptionEN }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="/">Search another artist</a>
+  </body>
+
+</html>
